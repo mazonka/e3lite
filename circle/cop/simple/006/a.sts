@@ -1,0 +1,34 @@
+#/bin/sh
+
+# clean var reuse
+# simplify
+# rename all vars
+
+c=$1
+
+out() {
+echo ""
+echo "=== start $1"
+cat $1
+echo "=== end $1"
+rm -f $1
+}
+
+run(){
+echo ""
+echo "[$1 $2]"
+$c $1 $2
+if [ "$3" != "" ]; then
+test -f $3 && out $3
+fi
+}
+
+run -cm a.cir
+run -cv a.cir
+run -cn a.cir
+run -cm a.cir.out a.cir.out.out
+run -cv a.cir.out a.cir.out.out
+out a.cir.out
+
+
+

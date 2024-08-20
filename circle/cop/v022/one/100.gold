@@ -1,0 +1,44 @@
+
+[ ]
+Error: no input file (use '-h' for help)
+
+[-h ]
+Usage: crcl [command] file(s)
+Commands:
+  -c	read circle file
+  -b	read BBS file (Balanced Binary System)
+  -t	read truth table
+  -v	compare two circles by evaluation
+  -h	print help summary (this page)
+Sub-commands for circle file (-c):
+   c	output circle file
+   b|d	output BDDed circle, d - other formats
+   s	print summary
+   n	clean var reuse
+   m	simplify (need clean vars)
+   v	rename all vars
+   g	output in Verilog syntax
+   l	output in C syntax
+   p	output progression table
+   i	output invariant wires
+   r	output gate circuit & wire matrix
+   x	output inverted logic circuit
+   @	(modify) do not flatten / BDD no reorder / wire decl
+   t	output text binary truth table (*)
+   a	output arithmetic truth table (*)
+   (*)	recalculate if truth table file exists
+Sub-commands for BBS (-b):
+   g	generate BBS file
+   c	convert BBS into circle
+   @	(modifier) use inbuilt random generator
+Sub-commands for truth table (-t):
+   c	generate circle
+   a	convert to arithmetic
+Sub-commands for comparing circles (-v) (*):
+   r	random comparison
+   s	sequential comparison (default)
+   n	generate random inputs
+   @	(modifier) use inbuilt random generator
+   (*)	format: file1 file2 [file3]
+   	file3 - either table or seed-size file
+Default: -cs

@@ -1,0 +1,64 @@
+reading [a.cr]
+truth table written
+
+[-ci a.cr]
+reading [a.cr]
+invariant file written
+
+=== start a.cr.out
+xx
+x0
+= = =
+ a b
+ y z=0
+= = =
+ 2 2
+ 1 0
+= = =
+Input  0
+Middle 1
+Total  1
+=== end a.cr.out
+
+[-ci b.cr]
+reading [b.cr]
+invariant file written
+
+=== start b.cr.out
+xxxxxxx0xx.....
+xxxxxxxxxxxx0xx
+xxxxxxxxxx000xx
+x0xxxxxx1x0....
+xxx11xx1.......
+xx11x..........
+xx.............
+xxxxx..........
+xxxxx..........
+xxx............
+= = =
+ x0 x1 x2 x3 x4 x5 x6 x7=0 x8 x9
+ a ac ad ae af ag b c d e l m n=0 o p
+ ah ai aj ak al f h i j k q=0 s=0 t=0 u v
+ aa ab=0 am an ao ap as g r=1 y z=0
+ aq ar at av=1 aw=1 ax w x=1
+ au ay ba=1 bb=1 bc
+ az bd
+ be bf bg bh bk
+ bi bj bl y0 y3
+ y1 y2 y4
+= = =
+ 64 64 64 64 64 64 64 0 64 64
+ 64 64 64 64 64 64 64 64 64 64 64 64 0 64 64
+ 64 64 64 64 64 64 64 64 64 64 0 0 0 64 64
+ 64 0 64 64 64 64 64 64 128 64 0
+ 64 64 64 128 128 64 64 128
+ 64 64 128 128 64
+ 64 64
+ 64 64 64 64 64
+ 64 64 64 64 64
+ 64 64 64
+= = =
+Input  1
+Middle 12
+Total  13
+=== end b.cr.out

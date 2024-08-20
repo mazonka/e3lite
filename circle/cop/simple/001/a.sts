@@ -1,0 +1,42 @@
+#/bin/sh
+
+# testing basic functionality
+
+c=$1
+
+out() {
+echo "=== start $1"
+cat $1
+echo "=== end $1"
+rm -f $1
+}
+
+run(){
+echo ""
+echo "[$1 $2]"
+$c $1 $2
+if [ "$3" != "" ]; then
+test -f $3 && out $3
+fi
+}
+
+echo "TEST default"
+$1 input
+
+run -cs input
+run -cc input input.out
+run -c@c input input.out
+run -cc@s input input.out
+
+run -cb input
+run -cv input.bdd input.bdd.out
+rm -f input.bdd
+
+run -cv input input.out
+run -ct input input.ttb
+run -ca input input.ttb
+run -cv@ input input.out
+
+
+
+

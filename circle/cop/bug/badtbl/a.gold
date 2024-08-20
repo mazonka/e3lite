@@ -1,0 +1,5 @@
+
+[-ct eq]
+reading [eq]
+reading [eq.ttb] for inputs
+Error: Expecting 3 bits in table file, got 1

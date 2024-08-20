@@ -1,0 +1,8 @@
+
+[a1.cr ]
+reading [a1.cr]
+Error: [a1.cr] line 1: Bad number of outputs: 6, module requires 2, see [0]
+
+[a2.cr ]
+reading [a2.cr]
+Error: [a2.cr] line 1: Bad number of inputs: 6, module requires 2, see [0]

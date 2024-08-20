@@ -1,0 +1,27 @@
+#/bin/sh
+
+c=$1
+
+out() {
+echo ""
+echo "=== start $1"
+cat $1
+echo "=== end $1"
+rm -f $1
+}
+
+run(){
+echo ""
+echo "[$1 $2]"
+$c $1 $2
+if [ "$3" != "" ]; then
+test -f $3 && out $3
+fi
+}
+
+#run -bgc bbs
+run -bc bbs
+run -ct superenc
+run superenc
+out superenc.ttb
+rm -f bbs.*.cir

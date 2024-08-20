@@ -1,0 +1,8 @@
+{=size}
+
+(y[1,S])=o/nand.bdd(x[1,S],z[1,S])
+
+(ya[1,M],0[M,K])=o/dec(x[1,S])
+(yb[1,M],0[M,K])=o/dec(z[1,S])
+(yc[1,M],0[M,K])=o/dec(y[1,S])
+

@@ -1,0 +1,40 @@
+#/bin/sh
+
+# preprocessor
+
+c=$1
+
+out() {
+echo ""
+echo "=== start $1"
+cat $1
+echo "=== end $1"
+rm -f $1
+}
+
+run(){
+echo ""
+echo "[$1 $2]"
+$c $1 $2
+if [ "$3" != "" ]; then
+test -f $3 && out $3
+fi
+}
+
+#cc,cv,cm
+
+run -cc a.cr
+run -cv a.cr.out
+run -cm a.cr.out.out
+
+out a.cr.out
+out a.cr.out.out
+out a.cr.out.out.out
+
+run -cc b.cr b.cr.out
+run -cc c.cr c.cr.out
+run -cc d.cr d.cr.out
+
+run -cc d_nop.cr
+run -cc d_neg.cr
+

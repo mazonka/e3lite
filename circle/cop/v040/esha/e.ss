@@ -1,0 +1,1 @@
+z1 = Or(a,And(b,Not(c)),Not(d))

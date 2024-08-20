@@ -1,0 +1,26 @@
+#/bin/sh
+
+# progression table
+
+c=$1
+
+out() {
+echo ""
+echo "=== start $1"
+cat $1
+echo "=== end $1"
+rm -f $1
+}
+
+run(){
+echo ""
+echo "[$1 $2]"
+$c $1 $2
+if [ "$3" != "" ]; then
+test -f $3 && out $3
+fi
+}
+
+run -cg a.cr a.cr.v
+run -cg@ x.cr x.cr.v
+

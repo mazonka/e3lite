@@ -1,0 +1,41 @@
+#/bin/sh
+
+# simplify
+
+c=$1
+
+out() {
+echo ""
+echo "=== start $1"
+cat $1
+echo "=== end $1"
+rm -f $1
+}
+
+run(){
+echo ""
+echo "[$1 $2]"
+$c $1 $2
+if [ "$3" != "" ]; then
+test -f $3 && out $3
+fi
+}
+
+run -cn c.cir
+run -cm c.cir.out
+run -cv c.cir.out.out
+
+run -ct c.cir
+run -ct c.cir.out.out.out
+
+cmp c.cir.ttb c.cir.out.out.out.ttb && echo CMP OK
+
+out c.cir.out
+out c.cir.out.out
+out c.cir.out.out.out
+
+out c.cir.ttb
+out c.cir.out.out.out.ttb
+
+
+

@@ -1,0 +1,20 @@
+{=size}
+{K=S-1}
+
+# mixer
+#{i,1,S,j,*2-1} xi=vj
+#{i,1,S,j,*2} zi=vj
+
+# input
+(a1,0[1,K])=o/dec(x[1,S])
+(a2,0[1,K])=o/dec(z[1,S])
+
+# NAND
+a = !(a1*a2)
+
+# hashing
+{i,1,S} bi = xi^zi
+(r[1,K],0)=o/enc(b[1,S])
+
+# output
+(y[1,S])=o/enc(a,r[1,K])

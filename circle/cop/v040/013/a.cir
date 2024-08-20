@@ -1,0 +1,3 @@
+(x) = mux(a,b,c)
+(y) = mux(c,a,b)
+(z) = mux(b,c,a)

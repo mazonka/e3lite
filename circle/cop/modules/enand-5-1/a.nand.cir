@@ -1,0 +1,22 @@
+{=size.inc}
+{K=S-1}
+
+# input
+(a1,0[1,K])=o/dec(x[1,S])
+(a2,0[1,K])=o/dec(z[1,S])
+
+# NAND
+a = !(a1*a2)
+
+# hashing
+#r2 = x1^z2^x3
+#r3 = z1^x2^z3
+
+#(r[1,K],0,0[1,S])=o/hash(x[1,S],z[1,S])
+
+{i,1,S} bi = xi&zi
+(r[1,K],0)=o/enc(b[1,S])
+#(r[1,K],0)=o/hash(b[1,S])
+
+# output
+(y[1,S])=o/enc(a,r[1,K])

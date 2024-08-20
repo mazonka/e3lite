@@ -1,0 +1,6 @@
+#/bin/sh
+
+make -s exe=$1
+cat o/gfun.tt
+make -s clean
+

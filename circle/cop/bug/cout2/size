@@ -1,0 +1,17 @@
+{SM=1}
+{SC=3}
+
+{SECROU=1}
+
+{QMm1=SM-1}
+{QCm1=SC-1}
+{QCm3=SC-3}
+
+{BASE=1000}
+{S1=BASE+1}
+{S2=BASE+SM}
+{S3=S2+1}
+{S4=BASE+SC}
+
+{Q1p1=S1+1}
+{Q1m1=S1-1}

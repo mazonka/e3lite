@@ -1,0 +1,6 @@
+#/bin/sh
+
+make -s exe=$1
+cat o/add1.tt
+make -s clean
+

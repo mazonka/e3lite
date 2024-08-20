@@ -1,0 +1,16 @@
+{=size.inc}
+{K=S-1}
+
+#(y1,y2,y3)=o/nand.bdd(x1,x2,x3,z1,z2,z3)
+#(y4,0,0)=o/dec(x1,x2,x3)
+#(y5,0,0)=o/dec(z1,z2,z3)
+#(y6,0,0)=o/dec(y1,y2,y3)
+#y1=y1
+#y2=y2
+#y3=y3
+
+(y[1,S])=o/nand.bdd(x[1,S],z[1,S])
+(yc1,0[1,K])=o/dec(x[1,S])
+(yc2,0[1,K])=o/dec(z[1,S])
+(yc3,0[1,K])=o/dec(y[1,S])
+#{L,1,S} yL=yL

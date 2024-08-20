@@ -1,0 +1,40 @@
+{=size}
+
+#10010
+#00010
+(o1z[1,C])=eq(1,0,0,1,0)
+(n1z[1,C])=eq(0,0,0,1,0)
+#(n2z[1,C])=eq(0,0,0,0,0)
+
+# lazy - construct constants here
+(n2z[1,C])=op(n1z[1,C],n1z[1,C])
+(o2z[1,C])=op(o1z[1,C],o1z[1,C])
+(o3z[1,C])=op(o1z[1,C],o2z[1,C])
+(o5z[1,C])=op(o3z[1,C],o2z[1,C])
+
+(cx0_[1,C])=mux(x0,o1z[1,C],n1z[1,C])
+(cx1_[1,C])=mux(x1,o1z[1,C],n2z[1,C])
+
+(cy1_[1,C])=op(cx0_[1,C],cx1_[1,C])
+
+# decrypt - test 1st op block
+#(y[1,C])=dec(cy1_[1,C])
+
+(cr0_[1,C])=mux(r0,o1z[1,C],o2z[1,C])
+
+(cy2_[1,C])=op(cy1_[1,C],cr0_[1,C])
+
+# decrypt - test 2nd op block - expect rXX
+# (y[1,C])=dec(cy2_[1,C])
+
+(cr1_[1,C])=mux(r1,o1z[1,C],o3z[1,C])
+(cr2_[1,C])=mux(r2,o1z[1,C],o5z[1,C])
+(cy3_[1,C])=op(cr1_[1,C],cr2_[1,C])
+
+# decrypt - test 3rd op block - expect all 00
+#(0[1,C])=eq(cy2_[1,C])
+#(y[1,C])=dec(cy3_[1,C])
+
+(cy4_[1,C])=op(cy2_[1,C],cy3_[1,C])
+
+(y[1,C])=dec(cy4_[1,C])

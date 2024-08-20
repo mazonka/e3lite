@@ -1,0 +1,10 @@
+# bad on -cv
+
+a = x*y
+a = x*y
+b = x| y
+c = x^y
+b=0
+#a=0
+c=0
+

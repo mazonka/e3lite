@@ -1,0 +1,91 @@
+loading BBS file
+reading [a.d2e.cir]
+BDDed circle written
+reading [o/d2e.bdd]
+ignore line [ v4 * v3 * v2 * v1 * v0]
+ignore line [ [f0 f1 f2 f3 f4]]
+truth table written
+loading BBS file
+loading BBS file
+reading [a.nand.cir]
+BDDed circle written
+reading [o/nand.bdd]
+ignore line [ v4 * v0 * v6 * v1 * v9 * v5 * v7 * v8 * v3 * v2]
+ignore line [ [f0 f1 f2 f3 f4]]
+truth table written
+reading [a.tbed.cir]
+ignore line [ v4 * v0 * v6 * v1 * v9 * v5 * v7 * v8 * v3 * v2]
+ignore line [ [f0 f1 f2 f3 f4]]
+BDDed circle written
+reading [o/tbed.bdd]
+ignore line [  *  *  *  * v0 * v1 * v4 * v5 * v9 * v6]
+ignore line [ [f0 f1 f2]]
+truth table written
+reading [o/nand.bdd]
+ignore line [ v4 * v0 * v6 * v1 * v9 * v5 * v7 * v8 * v3 * v2]
+ignore line [ [f0 f1 f2 f3 f4]]
+truth table written
+000 000 001
+100 000 101
+010 000 101
+110 000 001
+001 000 101
+101 000 001
+011 000 001
+111 000 101
+000 100 011
+100 100 110
+010 100 110
+110 100 011
+001 100 110
+101 100 011
+011 100 011
+111 100 110
+000 010 011
+100 010 110
+010 010 110
+110 010 011
+001 010 110
+101 010 011
+011 010 011
+111 010 110
+000 110 001
+100 110 101
+010 110 101
+110 110 001
+001 110 101
+101 110 001
+011 110 001
+111 110 101
+000 001 011
+100 001 110
+010 001 110
+110 001 011
+001 001 110
+101 001 011
+011 001 011
+111 001 110
+000 101 001
+100 101 101
+010 101 101
+110 101 001
+001 101 101
+101 101 001
+011 101 001
+111 101 101
+000 011 001
+100 011 101
+010 011 101
+110 011 001
+001 011 101
+101 011 001
+011 011 001
+111 011 101
+000 111 011
+100 111 110
+010 111 110
+110 111 011
+001 111 110
+101 111 011
+011 111 011
+111 111 110

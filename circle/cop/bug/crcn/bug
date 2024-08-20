@@ -1,0 +1,5 @@
+# cr -cn make really bad error - fixed
+y3 = a
+y4 = b
+y0 = !y0
+y3 = !y3

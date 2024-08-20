@@ -1,0 +1,9 @@
+{SM=3}
+{SC=4}
+
+{BASE=1000}
+{S1=BASE+1}
+{S2=BASE+SM}
+{S3=S2+1}
+{S4=BASE+SC}
+

@@ -1,0 +1,34 @@
+#/bin/sh
+
+# TT to simple circle
+
+c=$1
+
+out() {
+echo ""
+echo "=== start $1"
+cat $1
+echo "=== end $1"
+#rm -f $1
+}
+
+run(){
+echo ""
+echo "[$1 $2]"
+$c $1 $2
+if [ "$3" != "" ]; then
+test -f $3 && out $3
+fi
+}
+
+run -tc a.tt
+run -cb a.tt.cir
+run -cv a.tt.cir.bdd
+run -cm a.tt.cir.bdd.out
+run -cv a.tt.cir.bdd.out.out
+
+out a.tt.cir
+out a.tt.cir.bdd.out
+out a.tt.cir.bdd.out.out
+out a.tt.cir.bdd.out.out.out
+rm -f a.tt.cir a.tt.cir.*

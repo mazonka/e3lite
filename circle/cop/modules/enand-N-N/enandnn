@@ -1,0 +1,16 @@
+{=size}
+
+
+# input
+(a[1,M],0[M,K])=o/dec(x[1,S])
+(b[1,M],0[M,K])=o/dec(z[1,S])
+
+# NAND
+{i,1,M} ci = !(ai*bi)
+
+# hashing
+{i,1,S} di = xi^zi
+(r[M,K],0[1,M])=o/enc(d[1,S])
+
+# output
+(y[1,S])=o/enc(c[1,M],r[M,K])

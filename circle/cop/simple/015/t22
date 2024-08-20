@@ -1,0 +1,6 @@
+# inputs a b
+z=a+!b
+x=z
+y=x+a*x
+x=x*1+0
+# outputs x y

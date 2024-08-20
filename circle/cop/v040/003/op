@@ -1,0 +1,16 @@
+{=size}
+
+# input
+(a[1,M],0[1,R])=dec(x[1,C])
+(b[1,M],0[1,R])=dec(z[1,C])
+
+# op
+(c[1,M]) = adder(a[1,M],b[1,M])
+
+# hashing
+{i,1,C} hi = xi^zi
+(0[1,M],r[1,R])=enc(h[1,C])
+
+# output
+(y[1,C])=enc(c[1,M],r[1,R])
+

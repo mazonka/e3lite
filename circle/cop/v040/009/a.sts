@@ -1,0 +1,36 @@
+#/bin/sh
+
+# balanced binary system - linear NAND
+
+c=$1
+
+out() {
+echo ""
+echo "=== start $1"
+cat $1
+echo "=== end $1"
+rm -f $1
+}
+
+run(){
+echo ""
+echo "[$1 $2]"
+$c $1 $2
+if [ "$3" != "" ]; then
+test -f $3 && out $3
+fi
+}
+
+run -bgc@ bbs
+run -cn bbs.1.cir
+run -cx bbs.1.cir.out | grep -v Memory | grep -v taken
+echo "Expecting SAME functions"
+$c -v bbs.1.cir.out.out bbs.2.cir
+
+echo ""
+echo "===="
+echo "DETAILS"
+out bbs.2.cir
+out bbs.1.cir
+out bbs.1.cir.out
+out bbs.1.cir.out.out

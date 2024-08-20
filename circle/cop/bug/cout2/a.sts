@@ -1,0 +1,32 @@
+#/bin/sh
+
+# preprocessor expansion must be taken in ()
+
+c=$1
+
+out() {
+echo ""
+echo "=== start $1"
+cat $1
+echo "=== end $1"
+rm -f $1
+}
+
+run(){
+echo ""
+echo "[$1 $2]"
+$c $1 $2
+if [ "$3" != "" ]; then
+test -f $3 && out $3
+fi
+}
+
+run -cn cr
+$c -v cr cr.out
+out cr.out
+
+run -cn fdec
+$c -v fdec fdec.out fdec.ttb
+out fdec.out
+
+

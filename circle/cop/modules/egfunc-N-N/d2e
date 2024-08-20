@@ -1,0 +1,3 @@
+{=size}
+(a[S1,S4])=o/dec(x[S1,S4])
+(y[S1,S4])=o/enc(a[S1,S4])

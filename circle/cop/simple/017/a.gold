@@ -1,0 +1,14 @@
+
+[a.cr ]
+reading [a.cr]
+
+Summary:
+File: a.cr
+Inout     : 2x2
+Inputs    : x x1
+Outputs   : y y1
+Middles   : 0
+Tot vars  : 4
+Hierarchy : flat
+Inst cntr : 0
+Var reuse : no

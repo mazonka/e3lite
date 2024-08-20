@@ -1,0 +1,50 @@
+
+[-cp a.cr]
+reading [a.cr]
+progression table written
+
+=== start a.cr.out
+xx
+x.
+= = =
+ a b
+ y
+= = =
+= = =
+Input  0
+Middle 0
+Total  0
+=== end a.cr.out
+
+[-cp b.cr]
+reading [b.cr]
+progression table written
+
+=== start b.cr.out
+xxxxxxxxxx.....
+xxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxx
+xxxxxxxxxxx....
+xxxxxxxx.......
+xxxxx..........
+xx.............
+xxxxx..........
+xxxxx..........
+xxx............
+= = =
+ x0 x1 x2 x3 x4 x5 x6 x7 x8 x9
+ a ac ad ae af ag b c d e l m n o p
+ ah ai aj ak al f h i j k q s t u v
+ aa ab am an ao ap as g r y z
+ aq ar at av aw ax w x
+ au ay ba bb bc
+ az bd
+ be bf bg bh bk
+ bi bj bl y0 y3
+ y1 y2 y4
+= = =
+= = =
+Input  0
+Middle 0
+Total  0
+=== end b.cr.out

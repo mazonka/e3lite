@@ -1,0 +1,3 @@
+y1 = a*b + c'*d'
+c = a*g + d + g'
+d = a&b&c&d'

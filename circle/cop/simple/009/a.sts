@@ -1,0 +1,28 @@
+#/bin/sh
+
+# simplify
+# the result is not good - we will fix it in Circle2 with strict "inputs:" and  "outputs:"
+
+c=$1
+
+out() {
+echo ""
+echo "=== start $1"
+cat $1
+echo "=== end $1"
+rm -f $1
+}
+
+run(){
+echo ""
+echo "[$1 $2]"
+$c $1 $2
+if [ "$3" != "" ]; then
+test -f $3 && out $3
+fi
+}
+
+run -cn a.cir a.cir.out
+run -cv a.cir a.cir.out
+run -cn b.cir b.cir.out
+

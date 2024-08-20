@@ -1,0 +1,36 @@
+# testing verilog adapter
+
+#module ker_dgst_ker1 (a, b, z);
+#input [4 : 0] a; // size = lambda
+#input [4 : 0] b;
+#output[4 : 0] z;
+
+#assign z[1] = a[1] ^ b[2]; // the constant - 1 to put in the range 0 to (lambda-1)
+#assign z[2] = a[2] ^ b[3];
+#...
+#endmodule
+
+c=$1
+
+out() {
+echo ""
+echo "=== start $1"
+cat $1
+echo "=== end $1"
+rm -f $1
+}
+
+run(){
+echo ""
+echo "[$1 $2]"
+$c $1 $2
+if [ "$3" != "" ]; then
+test -f $3 && out $3
+fi
+}
+
+run -cg cir22 cir22.v
+run -cg cir32 cir32.v
+run -cg cir42 cir42.v
+run -cg cir62 cir62.v
+run -cg cir84 cir84.v

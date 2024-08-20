@@ -1,0 +1,7 @@
+#/bin/sh
+
+make -s exe=$1
+make -s exe=$1 o/tbed.ta
+cat o/tbed.ta
+make -s clean
+

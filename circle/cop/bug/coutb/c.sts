@@ -1,0 +1,36 @@
+#/bin/sh
+
+# preprocessor expansion must be taken in ()
+
+c=$1
+
+out() {
+echo ""
+echo "=== start $1"
+cat $1
+echo "=== end $1"
+rm -f $1
+}
+
+run(){
+echo ""
+echo "[$1 $2]"
+$c $1 $2
+if [ "$3" != "" ]; then
+test -f $3 && out $3
+fi
+}
+
+run -cn cxx cxx.out
+run -cn cxy1 cxy1.out
+run -cn cxy2 cxy2.out
+run -cn cxy3
+$c -v cxy3 cxy3.out
+out cxy3.out
+
+run -cn cxy4
+run -cv cxy4.out cxy4.out.out
+run -cn cxy4 cxy4.out
+run -cn cxy5 cxy5.out
+run -cn cxy6 cxy6.out
+run -cn cxy7 cxy7.out

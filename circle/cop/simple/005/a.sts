@@ -1,0 +1,31 @@
+#/bin/sh
+
+# balanced binary system - linear
+
+c=$1
+
+out() {
+echo ""
+echo "=== start $1"
+cat $1
+echo "=== end $1"
+rm -f $1
+}
+
+run(){
+echo ""
+echo "[$1 $2]"
+$c $1 $2
+if [ "$3" != "" ]; then
+test -f $3 && out $3
+fi
+}
+
+cp t15.bbs t15.g.bbs
+run -bg@ t15.g.bbs
+run -bc@ t15.g.bbs
+
+out t15.g.bbs
+out t15.g.bbs.1.cir
+out t15.g.bbs.2.cir
+

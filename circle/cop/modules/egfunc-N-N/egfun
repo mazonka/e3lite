@@ -1,0 +1,16 @@
+{=size}
+
+# input
+(x[S1,S2],0[S3,S4])=o/dec(a[S1,S4])
+(y[S1,S2],0[S3,S4])=o/dec(b[S1,S4])
+
+# G-func
+leq = xS2 | ! (x[S1+S2])
+{K,S1,S2} zK = yK * !leq
+
+# hashing
+{i,S1,S4} hi = ai^bi
+(0[S1,S2],r[S3,S4])=o/enc(h[S1,S4])
+
+# output
+(c[S1,S4])=o/enc(z[S1,S2],r[S3,S4])

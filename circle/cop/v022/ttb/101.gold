@@ -1,0 +1,27 @@
+
+[-ct 101.cr]
+reading [101.cr]
+reading [101.cr.ttb] for inputs
+truth table written
+
+=== start 101.cr.ttb
+100 1
+010 0
+110 1
+001 0
+111 1
+=== end 101.cr.ttb
+
+[-ca 101.cr]
+reading [101.cr]
+reading [101.cr.ttb] for inputs
+truth table written
+
+=== start 101.cr.ttb
+# 3 1
+ 1 1
+ 2 0
+ 3 1
+ 4 0
+ 7 1
+=== end 101.cr.ttb

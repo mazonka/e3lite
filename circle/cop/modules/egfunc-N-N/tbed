@@ -1,0 +1,10 @@
+{=size}
+
+(xc[S1,S4])=o/enc(x[S1,S2],0[S3,S4])
+(yc[S1,S4])=o/enc(y[S1,S2],0[S3,S4])
+
+(zc[S1,S4])=o/egfun.bdd(xc[S1,S4],yc[S1,S4])
+
+(z[S1,S2],0[S3,S4])=o/dec(zc[S1,S4])
+
+#{L,1,S} yL=yL

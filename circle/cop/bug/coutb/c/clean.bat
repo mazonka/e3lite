@@ -1,0 +1,1 @@
+rm -f *.exe *.obj cir.bdd cir.out cir.bdd.c cir.out.c

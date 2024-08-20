@@ -1,0 +1,8 @@
+# encrypted size
+{S=5}
+
+# plain size
+{M=3}
+
+{K=S-1}
+{N=M+1}

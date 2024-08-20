@@ -1,0 +1,61 @@
+
+[-vs 104a.cr  ]
+Error: -v requires 2 files
+
+[-vs 104a.cr z ]
+Error: Cannot open [z]
+
+[-vs 104a.cr 104b.cr ]
+Error: Empty circle
+
+[-vs 104b.cr 104c.cr ]
+Error: Circles have different input sizes
+
+[-vs 104c.cr 104d.cr ]
+Error: Circles have different output sizes
+
+[-vs 104c.cr 104c.cr ]
+Same: [104c.cr] [104c.cr]
+
+[-vs 104c.cr 104e.cr ]
+Difference found for [104c.cr] [104e.cr]
+input : 001
+output 1 : 0
+output 2 : 1
+
+[-vs 104c.cr 104c.cr 104c.tb]
+Same: [104c.cr] [104c.cr] for [104c.tb]
+
+[-vs 104c.cr 104e.cr 104c.tb]
+Same: [104c.cr] [104e.cr] for [104c.tb]
+
+[-vr@ 104c.cr 104e.cr ]
+Difference found for [104c.cr] [104e.cr]
+input : 011
+output 1 : 1
+output 2 : 0
+
+[-vr@ 104c.cr 104c.cr 104e.ss]
+No difference found: [104c.cr] [104c.cr] with [104e.ss]
+checked 10 inputs with seed=1
+
+[-vr@ 104c.cr 104e.cr 104e.ss]
+Difference found for [104c.cr] [104e.cr]
+input : 001
+output 1 : 0
+output 2 : 1
+
+[-vn@ 104c.cr 104c.cr 104e.ss]
+
+=== start 104c.cr.out
+100
+111
+001
+001
+110
+010
+110
+001
+010
+000
+=== end 104c.cr.out

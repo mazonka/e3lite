@@ -1,0 +1,56 @@
+
+[-bc bbs]
+loading BBS file
+
+[-ct superenc]
+reading [superenc]
+truth table written
+
+[superenc ]
+reading [superenc]
+
+Summary:
+File: superenc
+Inout     : 5x5
+Inputs    : r0 r1 r2 x0 x1
+Outputs   : y1 y2 y3 y4 y5
+Middles   : 1123
+Tot vars  : 1133
+Hierarchy : flat
+Inst cntr : 89
+Var reuse : yes
+
+=== start superenc.ttb
+00000 11001
+10000 01101
+01000 10001
+11000 00101
+00100 11001
+10100 01101
+01100 10001
+11100 00101
+00010 11001
+10010 01100
+01010 10001
+11010 00100
+00110 11001
+10110 01100
+01110 10001
+11110 00100
+00001 01100
+10001 10000
+01001 00100
+11001 11000
+00101 01100
+10101 10000
+01101 00100
+11101 11000
+00011 01100
+10011 10000
+01011 00100
+11011 11000
+00111 01100
+10111 10000
+01111 00100
+11111 11000
+=== end superenc.ttb

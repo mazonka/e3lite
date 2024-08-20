@@ -1,0 +1,5 @@
+(x) = mux(a,b,c)
+(ya) = mux(b,c,a)
+(z) = mux(c,a,b)
+y = ~ya
+

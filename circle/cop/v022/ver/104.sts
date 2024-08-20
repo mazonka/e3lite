@@ -1,0 +1,38 @@
+#/bin/sh
+
+# odd table
+
+c=$1
+
+out() {
+echo ""
+echo "=== start $1"
+cat $1
+echo "=== end $1"
+rm -f $1
+}
+
+run(){
+echo ""
+echo "[$1 $2 $3 $4]"
+$c $1 $2 $3 $4
+}
+
+
+run -vs 104a.cr
+run -vs 104a.cr z
+run -vs 104a.cr 104b.cr
+run -vs 104b.cr 104c.cr
+run -vs 104c.cr 104d.cr
+run -vs 104c.cr 104c.cr
+run -vs 104c.cr 104e.cr
+run -vs 104c.cr 104c.cr 104c.tb
+run -vs 104c.cr 104e.cr 104c.tb
+
+run -vr@ 104c.cr 104e.cr
+run -vr@ 104c.cr 104c.cr 104e.ss
+run -vr@ 104c.cr 104e.cr 104e.ss
+
+run -vn@ 104c.cr 104c.cr 104e.ss
+out 104c.cr.out
+

@@ -1,0 +1,4 @@
+
+[-cc d.cr]
+reading [d.cr]
+Error: [d.cr] line 1: Bad number of inputs: 1, module requires 2, see [e.cr:1:x]

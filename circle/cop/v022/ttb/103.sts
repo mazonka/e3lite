@@ -1,0 +1,55 @@
+#/bin/sh
+
+# table to circuit
+
+c=$1
+
+out() {
+echo ""
+echo "=== start $1"
+cat $1
+echo "=== end $1"
+rm -f $1
+}
+
+run(){
+echo ""
+echo "[$1 $2]"
+$c $1 $2
+if [ "$3" != "" ]; then
+test -f $3 && out $3
+fi
+}
+
+
+run -tc 101.tb
+cp 101.tb 101.tb.cir.ttb
+run -ca 101.tb.cir
+out 101.tb.cir
+dos2unix 101.ta 101.tb.cir.ttb 2> /dev/null
+cmp 101.ta 101.tb.cir.ttb || echo "ERROR 1"
+out 101.tb.cir.ttb
+
+run -tc 101.ta
+cp 101.ta 101.ta.cir.ttb
+run -ct 101.ta.cir
+out 101.ta.cir
+dos2unix 101.tb 101.ta.cir.ttb 2> /dev/null
+cmp 101.tb 101.ta.cir.ttb || echo "ERROR 2"
+out 101.ta.cir.ttb
+
+run -tc 102.tb
+cp 102.tb 102.tb.cir.ttb
+run -ca 102.tb.cir
+out 102.tb.cir
+dos2unix 102.ta 102.tb.cir.ttb 2> /dev/null
+cmp 102.ta 102.tb.cir.ttb || echo "ERROR 3"
+out 102.tb.cir.ttb
+
+run -tc 102.ta
+cp 102.ta 102.ta.cir.ttb
+run -ct 102.ta.cir
+out 102.ta.cir
+dos2unix 102.tb 102.ta.cir.ttb 2> /dev/null
+cmp 102.tb 102.ta.cir.ttb || echo "ERROR 4"
+out 102.ta.cir.ttb

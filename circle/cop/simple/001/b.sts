@@ -1,0 +1,26 @@
+#/bin/sh
+
+# testing error messages
+
+c=$1
+
+out() {
+echo "=== start $1"
+cat $1
+echo "=== end $1"
+rm -f $1
+}
+
+run(){
+echo ""
+echo "[$1]"
+$c $1 $2
+test -f $3 && out $3
+}
+
+run -cc@ input input.out
+run -ct@ input input.ttb
+run -ca@ input input.ttb
+
+
+
