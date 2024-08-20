@@ -1,0 +1,18 @@
+there is an incosistency with E3NOABORT
+
+circuit functions are 'noexcept' but gates are not
+
+Since circuit functions are 'noexcept' no exception can propagate
+even with E3NOABORT=1
+
+We have to do either
+
+1. put 'noexcept' on gate functions and accept that 
+E3NOABORT does not work on gate level at all regardless of the option
+
+or
+
+2. remove 'noexcept' from all circuit functions. That may worsen the
+performance for fast schemes. That must be done for the
+interface circuit.h as well as for the all generated circuits.
+ 

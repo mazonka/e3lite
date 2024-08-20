@@ -1,0 +1,53 @@
+
+x fix evalMult bug
+x .1 recompile without DEVMACROS  and -g
+x .1 128
+X.0 recompile without DEVMACROS  and -g
+x.0 pali0 batching
+x.1 pali1 batching
+
+x 1 make pali build without pali headers
+x make pali build bob quickly
+x struct SealCkksCiphertext struct SealCiphertext make in e3
+
+x explore Pali cc->Mult in code
+
+210122
+
+
+(?) Set up eclipse in Linux and run E3pali in it
+x Build Palisade debug+public version in Linux
+x Identify backtraces for NTTs
+Find the callchain to the 2nd NTT call in my code (constructed multiplication algorithm)
+Identify 1st NTT call in my code
+Store in/out in NTT call
+Isolate NTT function and compile with unresolved external
+Build NTT function outside and get executable working with the same in/out
+
+
+= breakpoints
+b xc_EvalMult
+b ForwardTransformToBitReverse
+b InverseTransformFromBitReverse
+
+backtrace - unknown
+transfrm.cpp:475 (ChineseRemainderTransformFTT<VecType>::InverseTransformFromBitReverse)
+transfrm.cpp:368 (NumberTheoreticTransform<VecType>::InverseTransformFromBitReverse)
+transfrm.cpp:436 (ChineseRemainderTransformFTT<VecType>::ForwardTransformToBitReverse)
+transfrm.cpp:240 (NumberTheoreticTransform<VecType>::ForwardTransformToBitReverse)
+
+
+
+backtrace - unknown
+transfrm.cpp:387	(NumberTheoreticTransform<VecType>::InverseTransformFromBitReverse)
+dcrtpoly.cpp:3116   (DCRTPolyImpl<VecType>::SwitchFormat)
+dcrtpoly.cpp:1901	(DCRTPolyImpl<VecType>::ExpandCRTBasis)
+
+
+function
+template <typename VecType>
+void NumberTheoreticTransform<VecType>::ForwardTransformToBitReverse(
+    const VecType &element, const VecType &rootOfUnityTable,
+    const NativeVector &preconRootOfUnityTable, VecType *result) {
+
+element is bigintnat::NativeIntegerT<unsigned long long>
